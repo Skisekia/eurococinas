@@ -8,14 +8,15 @@ module.exports = {
   ],
   theme: {
     extend: {
-      keyframes: {
-        marquee: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
+      colors: {
+        ec: {
+          primary:  "#0074D9", // azul principal
+          navy:     "#001F3F", // azul oscuro
+          gray50:   "#F5F5F5", // gris claro
+          gray500:  "#7A7A7A", // gris medio
+          white:    "#FFFFFF",
+          accent:   "#E63946", // rojo acento
         },
-      },
-      animation: {
-        marquee: 'marquee 20s linear infinite',
       },
     },
   },
