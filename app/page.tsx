@@ -1,9 +1,9 @@
 //rutas de la app
 import TopBar from "../components/TopBar";
-import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Benefits from "../components/Benefits";
 import FeaturedCategories from "../components/FeaturedCategories";
+import Reviews from "../components/Reviews";
 import pool from "../lib/db"; 
 
 // esto es una página de servidor (server component)
@@ -29,11 +29,11 @@ export default async function Page() {
   return (
     <>
       <TopBar />
-      <Header />
       <Hero slogan={slogan} />
       <Benefits />
       <FeaturedCategories />
-      <main className="min-h-[140vh] bg-white" />
+      <Reviews />
+      <main className="min-h-[5vh] bg-white" />
     </>
   );
 }

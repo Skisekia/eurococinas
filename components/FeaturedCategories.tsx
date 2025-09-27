@@ -12,31 +12,31 @@ const CATS: Cat[] = [
 
 export default function FeaturedCategoriesClean() {
   return (
-    <section className="mx-auto max-w-[1400px] px-6 py-12">
-      <div className="mb-6">
-        <h2 className="text-2xl md:text-3xl font-semibold">Categorías</h2>
+    <section className="mx-auto max-w-[1400px] px-6 py-8 md:py-10">
+      <div className="mb-3">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-0">Categorías</h2>
         <p className="text-sm text-slate-600">Encuentra lo que necesitas</p>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 md:gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {CATS.map((c) => (
           <Link
             key={c.href}
             href={c.href}
-            className="group rounded-2xl border bg-white p-2 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+            className="group rounded-2xl border bg-white p-2 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
           >
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
               <Image
                 src={c.img}
                 alt={c.title}
                 fill
-                className="object-cover transition duration-500 group-hover:scale-[1.04]"
+                className="object-cover transition duration-500 group-hover:scale-[1.03]"
               />
             </div>
             <div className="p-3">
               <h3 className="text-base font-semibold">{c.title}</h3>
               {c.subtitle && <p className="text-xs text-slate-600">{c.subtitle}</p>}
-              <span className="mt-3 inline-block rounded-full border px-3 py-1 text-xs text-slate-700 group-hover:bg-slate-50">
+              <span className="mt-2 inline-block rounded-full border px-3 py-1 text-xs text-slate-700 group-hover:bg-slate-50">
                 Ver categoría →
               </span>
             </div>

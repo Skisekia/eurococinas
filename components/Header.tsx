@@ -128,19 +128,6 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-
-          {/* Iconos derecha (medidas originales) */}
-          <div className="flex items-center gap-5">
-            <button aria-label="Buscar" className="rounded-xl p-2 hover:bg-white">
-              <Search className="h-5 w-5" />
-            </button>
-            <button aria-label="Cuenta" className="rounded-xl p-2 hover:bg-white">
-              <User className="h-5 w-5" />
-            </button>
-            <button aria-label="Carrito" className="rounded-xl p-2 hover:bg-white">
-              <ShoppingCart className="h-5 w-5" />
-            </button>
-          </div>
         </div>
       </div>
 
