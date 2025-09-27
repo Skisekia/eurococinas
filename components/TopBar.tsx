@@ -1,30 +1,40 @@
-export default function TopBar() {
-  const items = [
-    "Pago Seguro a través de Mercado Pago", "Diseños personalizados",
-    "Aceptamos Pagos con Tarjetas de Crédito y/o Débito",
-    "Financiamiento hasta 12 meses sin intereses con tarjetas participantes",
-    "Cotiza tu proyecto sin costo", "Envío e instalación gratis ",
-  ];
+"use client";
 
-  const Track = ({ hidden = false }: { hidden?: boolean }) => (
-    <ul aria-hidden={hidden} className="marquee__track text-xs text-white">
-      {items.map((t, i) => (
-        <li key={i} className="whitespace-nowrap flex items-center gap-2">
+const MESSAGES = [
+  "Aceptamos Pagos con Tarjetas de Crédito y/o Débito",
+  "Financiamiento hasta 12 meses sin intereses con tarjetas participantes",
+  "Cotiza tu proyecto sin costo",
+  "Envío e instalación gratis",
+  "Pago Seguro a través de Mercado Pago",
+  "Diseños personalizados",
+];
+
+function Items({ withSeparators = true }: { withSeparators?: boolean }) {
+  return (
+    <>
+      {MESSAGES.map((t, i) => (
+        <li key={`${t}-${i}`} className="flex items-center gap-2 whitespace-nowrap">
           <span>{t}</span>
-          <span className={`opacity-40 ${i === items.length - 1 ? "hidden" : ""}`}>•</span>
+          {withSeparators && i < MESSAGES.length - 1 && (
+            <span className="opacity-40">•</span>
+          )}
         </li>
       ))}
-    </ul>
+    </>
   );
+}
 
+export default function TopBar() {
   return (
-    // Fondo negro + texto blanco a todo lo ancho
     <div className="bg-black text-white">
-      {/* El contenedor marquee hace el scroll infinito */}
-      <div className="marquee px-4 py-2">
-        <Track />
-        {/* Duplicado para continuidad del scroll */}
-        <Track hidden />
+      <div className="topbar-marquee px-4 py-2">
+        {/* Un solo <ul> con el contenido duplicado */}
+        <ul className="topbar-track text-xs text-white" aria-hidden="false">
+          {/* 1ª mitad */}
+          <Items />
+          {/* 2ª mitad idéntica, SIN punto final para que embone perfecto */}
+          <Items withSeparators={false} />
+        </ul>
       </div>
     </div>
   );
