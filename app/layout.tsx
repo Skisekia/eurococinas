@@ -1,6 +1,7 @@
 // app/layout.tsx
 import './globals.css';
 import type { Metadata } from 'next';
+<<<<<<< Updated upstream
 
 // Si tu carpeta "components" está en la raíz del proyecto:
 import Header from '../components/Header';
@@ -9,6 +10,12 @@ import Footer from '../components/Footer';
 // Si la tienes dentro de /app/components/, usa en su lugar:
 // import Header from './components/Header';
 // import Footer from './components/Footer';
+=======
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
+
+>>>>>>> Stashed changes
 
 export const metadata: Metadata = {
   title: 'Eurococinas Laguna',
