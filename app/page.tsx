@@ -4,13 +4,20 @@ import Hero from "../components/Hero";
 import Benefits from "../components/Benefits";
 import FeaturedCategories from "../components/FeaturedCategories";
 import Reviews from "../components/Reviews";
-import pool from "../lib/db"; 
+import getPool from "../lib/db"; 
 
-// esto es una página de servidor (server component)
-// por lo que podemos usar código de servidor aquí
-// como consultas a la base de datos
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
+
+
+
+
 export default async function Page() {
+
+  const pool = getPool();
   const client = await pool.connect();
+
   // obtener el slogan del héroe desde la base de datos
   let slogan = "Cocinas que inspiran";
 

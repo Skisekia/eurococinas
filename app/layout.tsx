@@ -1,14 +1,12 @@
-// app/layout.tsx
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 import './globals.css';
 import type { Metadata } from 'next';
-
-// Si tu carpeta "components" está en la raíz del proyecto:
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-// Si la tienes dentro de /app/components/, usa en su lugar:
-// import Header from './components/Header';
-// import Footer from './components/Footer';
+
 
 export const metadata: Metadata = {
   title: 'Eurococinas Laguna',

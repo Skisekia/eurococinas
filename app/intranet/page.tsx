@@ -1,3 +1,4 @@
+
 // app/intranet/page.tsx
 export default function IntranetHome() {
   return (
