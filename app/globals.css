@@ -44,8 +44,3 @@
 }
 
 
-/* Quita espacio del último bloque antes del footer */
-main > section:last-of-type {
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-}
