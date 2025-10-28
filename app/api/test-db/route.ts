@@ -1,9 +1,12 @@
 import { NextResponse } from "next/server";
-import getPool from "../../../lib/db"; 
-
-export const runtime = "nodejs";
+import pool from "@/lib/db";
 
 export async function GET() {
-  const { rows } = await getPool().query("select 1 as ok");
-  return NextResponse.json({ ok: rows[0]?.ok === 1 });
+  try {
+    const result = await pool.query("SELECT NOW()");
+    return NextResponse.json({ time: result.rows[0] });
+  } catch (err) {
+    console.error("Error conectando a la base de datos:", err);
+    return NextResponse.json({ error: "Error conectando a la base de datos" }, { status: 500 });
+  }
 }

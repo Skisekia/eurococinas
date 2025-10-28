@@ -1,7 +1,6 @@
-export const runtime = 'nodejs';
-export const dynamic = 'force-dynamic';
-
+// app/layout.tsx
 import './globals.css';
+<<<<<<< HEAD
 import type { Metadata, Viewport } from 'next';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -10,6 +9,17 @@ import Footer from '../components/Footer';
    import { Inter } from 'next/font/google';
    const inter = Inter({ subsets: ['latin'], display: 'swap' });
 */
+=======
+import type { Metadata } from 'next';
+
+// Si tu carpeta "components" está en la raíz del proyecto:
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
+// Si la tienes dentro de /app/components/, usa en su lugar:
+// import Header from './components/Header';
+// import Footer from './components/Footer';
+>>>>>>> parent of 6f3c224 (Deploy vercel)
 
 export const metadata: Metadata = {
   title: 'Eurococinas Laguna',
